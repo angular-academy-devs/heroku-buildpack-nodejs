@@ -151,6 +151,8 @@ cache_build() {
 header "Caching build"
 cache_build | output "$LOG_FILE"
 
+npm run build-prod | output "$LOG_FILE"
+
 summarize_build() {
   cd $BUILD_DIR
   (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
